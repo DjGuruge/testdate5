@@ -9,6 +9,8 @@ public class CreaDataSet {
     public static String addYear(String dateString, int years) {
         OffsetDateTime date = OffsetDateTime.parse(dateString);
         date = date.plusYears(years);
+        date = date.minusMonths(1);
+        date = date.plusDays(7);
         DateTimeFormatter testoFormat = DateTimeFormatter
                 .ofLocalizedDateTime(FormatStyle.MEDIUM)
                 .withLocale(Locale.ITALY);
