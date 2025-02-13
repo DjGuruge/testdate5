@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.time.OffsetDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,20 +7,27 @@ class CreaDataSetTest {
 
     @Test
     void addYear() {
-        String res = CreaDataSet.addYear("2023-03-01T13:00:00Z",1);
-        assertEquals("1 mar 2024, 13:00:00",res);
+        String res = CreaDataSet.addYear("2023-03-01T13:00:00Z", 1);
+        assertEquals("1 mar 2024, 13:00:00", res);
     }
-  @Test
+
+    @Test
     void addTwoYear() {
-        String res = CreaDataSet.addYear("2023-03-01T13:00:00Z",2);
-        assertEquals("1 mar 2025, 13:00:00",res);
+        String res = CreaDataSet.addYear("2023-03-01T13:00:00Z", 2);
+        assertEquals("1 mar 2025, 13:00:00", res);
     }
 
     @Test
-    void subtractMonths() {
+    void addOneCenturyYear() {
+        String res = CreaDataSet.addYear("2023-03-01T13:00:00Z", 100);
+        assertEquals("1 mar 2123, 13:00:00", res);
     }
 
     @Test
-    void addDays() {
+    void addOnlyEightHours() {
+        String res = CreaDataSet.addYear("2023-03-02T01:00:00Z", 0);
+        assertEquals("2 mar 2023, 01:00:00", res);
     }
+
+
 }
